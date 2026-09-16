@@ -1,0 +1,430 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Auremont Golf Club</title>
+  <meta name="description" content="Auremont Golf Club. Ciento veinte hectáreas de silencio, reservadas a unos pocos.">
+  <meta name="theme-color" content="#1f2319">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400..600&family=Jost:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script>document.documentElement.classList.add('js');</script>
+</head>
+<body>
+
+  <header class="hero">
+    <picture class="hero__media">
+      <source
+        media="(max-width: 767px)"
+        srcset="assets/golf-mobile-crop-900.jpg 900w, assets/golf-mobile-crop.jpg 1589w"
+        sizes="100vw">
+      <img
+        src="assets/golf-desktop.jpg"
+        srcset="assets/golf-desktop-1600.jpg 1600w, assets/golf-desktop.jpg 2560w"
+        sizes="100vw"
+        alt="Calle del recorrido de Auremont al amanecer, entre robles y bunkers de arena clara"
+        fetchpriority="high">
+    </picture>
+
+    <nav class="nav" aria-label="Principal">
+      <ul class="nav__list nav__list--start">
+        <li><a class="nav__link" href="#club">El Club</a></li>
+        <li><a class="nav__link" href="#instalaciones">Instalaciones</a></li>
+      </ul>
+      <ul class="nav__list nav__list--end">
+        <li><a class="nav__link" href="#membresia">Membresía</a></li>
+        <li><a class="nav__link" href="#reserva">Reservar</a></li>
+      </ul>
+
+      <button class="nav__link nav__toggle" type="button" aria-expanded="false" aria-controls="menu">Menú</button>
+      <a class="nav__link nav__mobile-contact" href="#reserva">Reservar</a>
+    </nav>
+
+    <div class="hero__masthead">
+      <p class="hero__eyebrow">Golf Club <span aria-hidden="true">—</span> Desde 1927</p>
+      <h1 class="hero__title">Auremont</h1>
+    </div>
+
+    <div class="hero__footer">
+      <p class="hero__tagline">Ciento veinte hectáreas de silencio,<br> reservadas a unos pocos.</p>
+      <a class="cta" href="#reserva">
+        <span class="cta__label">Reservar tee time</span>
+        <span class="cta__arrow" aria-hidden="true"></span>
+      </a>
+    </div>
+  </header>
+
+  <main>
+    <section class="club" id="club" aria-labelledby="club-title">
+      <div class="club__inner">
+        <div class="club__text">
+          <header class="club__head reveal">
+            <p class="club__eyebrow">Desde 1927</p>
+            <h2 class="club__title" id="club-title">El Club</h2>
+          </header>
+
+          <div class="club__body">
+            <p class="reveal">Auremont nació en 1927, cuando un pequeño grupo de familias decidió construir un lugar donde el tiempo transcurriera de otra manera. No buscaban crecer — buscaban perdurar. Casi un siglo después, sigue siendo exactamente eso: un terreno cuidado con la misma atención que el primer día, y un número de socios que nunca ha dejado de ser reducido.</p>
+            <p class="reveal">No medimos el club por sus instalaciones, sino por lo que decidimos no tener: ruido, prisa, exceso. Cada rincón — el campo, la casa club, los vestuarios — responde a la misma idea. El verdadero lujo no se anuncia. Se siente.</p>
+          </div>
+        </div>
+
+        <!-- Foto: Adrian Hernandez en Unsplash — unsplash.com/photos/wIFGHGhg1nY -->
+        <figure class="club__media reveal reveal--media">
+          <img
+            src="assets/club-hierros.jpg"
+            srcset="assets/club-hierros-800.jpg 800w, assets/club-hierros.jpg 1400w"
+            sizes="(max-width: 767px) calc(100vw - 2.5rem), (max-width: 1099px) 50vw, 40vw"
+            alt="Dos hierros de golf apoyados sobre el césped del campo"
+            width="1400" height="2100"
+            loading="lazy" decoding="async">
+        </figure>
+      </div>
+    </section>
+
+    <section class="fac" id="instalaciones" aria-labelledby="fac-title">
+      <div class="fac__inner">
+        <header class="fac__head reveal">
+          <h2 class="fac__title" id="fac-title">Instalaciones</h2>
+        </header>
+
+        <ul class="fac__list reveal">
+          <li>
+            <button class="fac__item is-active" type="button" aria-controls="fac-media" aria-pressed="true" data-shot="0">
+              <span class="fac__num">01</span>
+              <span class="fac__body">
+                <span class="fac__name">Casa Club</span>
+                <span class="fac__desc">El corazón del club. Un espacio pensado para quedarse, no solo para pasar.</span>
+              </span>
+            </button>
+            <!-- Foto: Stefan Hiienurm en Unsplash — unsplash.com/photos/WcFI5GjzABA -->
+            <figure class="fac__shot">
+              <img src="assets/inst-casa-700.jpg" srcset="assets/inst-casa-700.jpg 700w, assets/inst-casa.jpg 1200w" sizes="calc(100vw - 2.5rem)" alt="Casa club iluminada al anochecer, con porche y jardín" width="1200" height="1476" loading="lazy" decoding="async">
+            </figure>
+          </li>
+
+          <li>
+            <button class="fac__item" type="button" aria-controls="fac-media" aria-pressed="false" data-shot="1">
+              <span class="fac__num">02</span>
+              <span class="fac__body">
+                <span class="fac__name">Restaurante &amp; Lounge</span>
+                <span class="fac__desc">Cocina de temporada y una carta de vinos que acompaña, nunca interrumpe.</span>
+              </span>
+            </button>
+            <!-- Foto: Alessio Dandi en Unsplash — unsplash.com/photos/LusjIyLfZ70 -->
+            <figure class="fac__shot">
+              <img src="assets/inst-restaurante-700.jpg" srcset="assets/inst-restaurante-700.jpg 700w, assets/inst-restaurante.jpg 1200w" sizes="calc(100vw - 2.5rem)" alt="Comedor en penumbra con mesa larga de madera puesta" width="1200" height="1800" loading="lazy" decoding="async">
+            </figure>
+          </li>
+
+          <li>
+            <button class="fac__item" type="button" aria-controls="fac-media" aria-pressed="false" data-shot="2">
+              <span class="fac__num">03</span>
+              <span class="fac__body">
+                <span class="fac__name">Vestuarios</span>
+                <span class="fac__desc">Detalles que solo se notan cuando faltan en otro sitio.</span>
+              </span>
+            </button>
+            <!-- Foto: Tim Bish en Unsplash — unsplash.com/photos/MeRmEeMRXQ0 -->
+            <figure class="fac__shot">
+              <img src="assets/inst-vestuarios-700.jpg" srcset="assets/inst-vestuarios-700.jpg 700w, assets/inst-vestuarios.jpg 1200w" sizes="calc(100vw - 2.5rem)" alt="Taquillas de madera con tiradores metálicos bajo luz cálida" width="1200" height="1600" loading="lazy" decoding="async">
+            </figure>
+          </li>
+
+          <li>
+            <button class="fac__item" type="button" aria-controls="fac-media" aria-pressed="false" data-shot="3">
+              <span class="fac__num">04</span>
+              <span class="fac__body">
+                <span class="fac__name">Zona de Prácticas</span>
+                <span class="fac__desc">Un campo de prácticas con la misma exigencia que el recorrido principal.</span>
+              </span>
+            </button>
+            <!-- Foto: Robert Ruggiero en Unsplash — unsplash.com/photos/kSOTIQifou0 -->
+            <figure class="fac__shot">
+              <img src="assets/inst-practicas-700.jpg" srcset="assets/inst-practicas-700.jpg 700w, assets/inst-practicas.jpg 1200w" sizes="calc(100vw - 2.5rem)" alt="Bolas de prácticas apiladas sobre el césped a primera hora" width="1200" height="1600" loading="lazy" decoding="async">
+            </figure>
+          </li>
+        </ul>
+
+        <!-- Escritorio: las cuatro fotos apiladas; el hover sobre la lista funde de una a otra.
+             En móvil se oculta y cada foto se ve dentro de su propio ítem (.fac__shot). -->
+        <div class="fac__media reveal" id="fac-media" aria-hidden="true">
+          <img class="is-active" src="assets/inst-casa.jpg" alt="" width="1200" height="1476" loading="lazy" decoding="async">
+          <img src="assets/inst-restaurante.jpg" alt="" width="1200" height="1800" loading="lazy" decoding="async">
+          <img src="assets/inst-vestuarios.jpg" alt="" width="1200" height="1600" loading="lazy" decoding="async">
+          <img src="assets/inst-practicas.jpg" alt="" width="1200" height="1600" loading="lazy" decoding="async">
+        </div>
+      </div>
+    </section>
+
+    <section class="mem" id="membresia" aria-label="Membresía">
+      <div class="mem__inner">
+        <p class="mem__statement reveal">La membresía en Auremont no se solicita.<br> Se propone.</p>
+
+        <p class="mem__note reveal">El acceso está limitado a un número reducido de socios, la mayoría propuestos por otros miembros. Si cree que Auremont es el lugar correcto para usted, con gusto conversamos.</p>
+
+      </div>
+
+      <ul class="mem__list reveal">
+        <li>Acceso ilimitado al campo</li>
+        <li>Reciprocidad con clubes internacionales</li>
+        <li>Invitados sin restricción</li>
+        <li>Eventos privados del club</li>
+      </ul>
+
+      <div class="mem__action reveal">
+        <button class="cta" type="button" aria-expanded="false" aria-controls="mem-mail">
+          <span class="cta__label">Solicitar información</span>
+          <span class="cta__arrow" aria-hidden="true"></span>
+        </button>
+
+        <p class="mem__mail" id="mem-mail" hidden>
+          <span class="mem__mail-address">info@auremontgolfclub.com</span>
+          <button class="mem__copy" type="button">Copiar</button>
+          <span class="mem__copied" role="status" aria-live="polite"></span>
+        </p>
+      </div>
+    </section>
+
+    <section class="book" id="reserva" aria-labelledby="book-title">
+      <div class="book__inner">
+        <header class="book__head reveal">
+          <p class="book__eyebrow">Salidas diarias</p>
+          <h2 class="book__title" id="book-title">Reserva</h2>
+        </header>
+
+        <div class="book__plan reveal">
+          <div class="courses" role="radiogroup" aria-label="Recorrido">
+            <button class="course is-active" type="button" role="radio" aria-checked="true" data-key="norte" data-name="Recorrido Norte" data-meta="Par 4 · 380 m">Norte</button>
+            <button class="course" type="button" role="radio" aria-checked="false" data-key="sur" data-name="Recorrido Sur" data-meta="Par 5 · 512 m">Sur</button>
+            <button class="course" type="button" role="radio" aria-checked="false" data-key="lago" data-name="El Lago" data-meta="Par 3 · 165 m">Lago</button>
+            <button class="course" type="button" role="radio" aria-checked="false" data-key="robles" data-name="Los Robles" data-meta="Par 4 · 402 m">Robles</button>
+          </div>
+
+          <div class="plan__head">
+            <h3 class="plan__name" data-plan-name>Recorrido Norte</h3>
+            <p class="plan__meta" data-plan-meta>Par 4 · 380 m</p>
+          </div>
+
+          <div class="plan__stage">
+          <figure class="plan is-active" data-plan="norte">
+            <img src="assets/hoyo-norte.jpg" srcset="assets/hoyo-norte-700.jpg 700w, assets/hoyo-norte.jpg 1200w" sizes="(max-width: 767px) calc(100vw - 2.5rem), 52vw" alt="Vista aérea del Recorrido Norte" width="1200" height="760" loading="lazy" decoding="async">
+            <svg class="trace" viewBox="0 0 1200 760" aria-hidden="true">
+              <path class="trace__edge" d="M206,246C228,235 300,250 352,258C404,266 468,280 520,292C572,304 619,312 664,330C709,348 755,380 792,398C829,416 868,418 884,436C900,454 907,494 890,506C873,518 824,514 784,508C744,502 696,485 652,472C608,459 568,448 520,432C472,416 414,396 364,378C314,360 248,344 222,322C196,300 184,257 206,246Z"/>
+              <circle class="trace__tee" cx="212" cy="286" r="9"/>
+              <circle class="trace__tee-dot" cx="212" cy="286" r="4"/>
+              <path class="trace__pole" d="M834,456 V410"/>
+              <path class="trace__flag" d="M834,410 L860,418 L834,426 Z"/>
+            </svg>
+            <figcaption class="plan__tag" style="left:44.0%;top:52.0%">380 m</figcaption>
+          </figure>
+          <figure class="plan" data-plan="sur" aria-hidden="true">
+            <img src="assets/hoyo-sur.jpg" srcset="assets/hoyo-sur-700.jpg 700w, assets/hoyo-sur.jpg 1200w" sizes="(max-width: 767px) calc(100vw - 2.5rem), 52vw" alt="Vista aérea del Recorrido Sur" width="1200" height="760" loading="lazy" decoding="async">
+            <svg class="trace" viewBox="0 0 1200 760" aria-hidden="true">
+              <path class="trace__edge" d="M452,44C416,57 413,99 388,124C363,149 324,171 300,192C276,213 256,234 242,252C228,270 201,287 216,302C231,317 306,344 332,344C358,344 355,321 372,302C389,283 407,259 432,232C457,205 494,173 522,142C550,111 614,64 602,48C590,32 488,31 452,44Z"/>
+              <circle class="trace__tee" cx="540" cy="52" r="9"/>
+              <circle class="trace__tee-dot" cx="540" cy="52" r="4"/>
+              <path class="trace__pole" d="M268,262 V216"/>
+              <path class="trace__flag" d="M268,216 L294,224 L268,232 Z"/>
+            </svg>
+            <figcaption class="plan__tag" style="left:36.0%;top:30.0%">512 m</figcaption>
+          </figure>
+          <figure class="plan" data-plan="lago" aria-hidden="true">
+            <img src="assets/hoyo-lago.jpg" srcset="assets/hoyo-lago-700.jpg 700w, assets/hoyo-lago.jpg 1200w" sizes="(max-width: 767px) calc(100vw - 2.5rem), 52vw" alt="Vista aérea del El Lago" width="1200" height="760" loading="lazy" decoding="async">
+            <svg class="trace" viewBox="0 0 1200 760" aria-hidden="true">
+              <path class="trace__edge" d="M548,56C522,82 539,168 542,212C545,256 555,287 568,322C581,357 598,390 618,424C638,458 656,491 686,524C716,557 762,594 798,622C834,650 869,687 904,692C939,697 1011,674 1010,652C1009,630 936,592 900,562C864,532 825,502 792,472C759,442 724,412 704,382C684,352 676,324 674,292C672,260 686,231 690,192C694,153 724,81 700,58C676,35 574,30 548,56Z"/>
+              <circle class="trace__tee" cx="604" cy="74" r="9"/>
+              <circle class="trace__tee-dot" cx="604" cy="74" r="4"/>
+              <path class="trace__pole" d="M936,640 V594"/>
+              <path class="trace__flag" d="M936,594 L962,602 L936,610 Z"/>
+            </svg>
+            <figcaption class="plan__tag" style="left:53.0%;top:58.0%">165 m</figcaption>
+          </figure>
+          <figure class="plan" data-plan="robles" aria-hidden="true">
+            <img src="assets/hoyo-robles.jpg" srcset="assets/hoyo-robles-700.jpg 700w, assets/hoyo-robles.jpg 1200w" sizes="(max-width: 767px) calc(100vw - 2.5rem), 52vw" alt="Vista aérea del Los Robles" width="1200" height="760" loading="lazy" decoding="async">
+            <svg class="trace" viewBox="0 0 1200 760" aria-hidden="true">
+              <path class="trace__edge" d="M1086,62C1061,69 1036,147 1008,192C980,237 953,292 918,332C883,372 843,404 798,432C753,460 701,483 648,502C595,521 531,545 478,546C425,547 350,503 330,506C310,509 330,543 358,566C386,589 445,636 500,642C555,648 630,620 688,602C746,584 800,560 848,532C896,504 940,470 978,432C1016,394 1048,349 1078,302C1108,255 1157,192 1158,152C1159,112 1111,55 1086,62Z"/>
+              <circle class="trace__tee" cx="1104" cy="96" r="9"/>
+              <circle class="trace__tee-dot" cx="1104" cy="96" r="4"/>
+              <path class="trace__pole" d="M292,478 V432"/>
+              <path class="trace__flag" d="M292,432 L318,440 L292,448 Z"/>
+            </svg>
+            <figcaption class="plan__tag" style="left:62.0%;top:62.0%">402 m</figcaption>
+          </figure>
+          </div>
+        </div>
+
+        <div class="book__panel">
+          <div class="field reveal">
+            <h3 class="field__label">Día</h3>
+            <div class="days" role="radiogroup" aria-label="Día">
+              <button class="day is-active" type="button" role="radio" aria-checked="true" data-offset="0"></button>
+              <button class="day" type="button" role="radio" aria-checked="false" data-offset="1"></button>
+              <button class="day" type="button" role="radio" aria-checked="false" data-offset="2"></button>
+              <button class="day" type="button" role="radio" aria-checked="false" data-offset="3"></button>
+              <button class="day" type="button" role="radio" aria-checked="false" data-offset="4"></button>
+              <button class="day" type="button" role="radio" aria-checked="false" data-offset="5"></button>
+              <button class="day" type="button" role="radio" aria-checked="false" data-offset="6"></button>
+              <button class="day" type="button" role="radio" aria-checked="false" data-offset="7"></button>
+              <button class="day" type="button" role="radio" aria-checked="false" data-offset="8"></button>
+              <button class="day" type="button" role="radio" aria-checked="false" data-offset="9"></button>
+              <button class="day" type="button" role="radio" aria-checked="false" data-offset="10"></button>
+              <button class="day" type="button" role="radio" aria-checked="false" data-offset="11"></button>
+              <button class="day" type="button" role="radio" aria-checked="false" data-offset="12"></button>
+              <button class="day" type="button" role="radio" aria-checked="false" data-offset="13"></button>
+            </div>
+          </div>
+
+          <div class="field reveal">
+            <h3 class="field__label">Franja horaria</h3>
+            <div class="hours" role="radiogroup" aria-label="Franja horaria">
+              <button class="hour" type="button" role="radio" aria-checked="false">08:00</button>
+              <button class="hour" type="button" role="radio" aria-checked="false">09:00</button>
+              <button class="hour" type="button" role="radio" aria-checked="false">10:00</button>
+              <button class="hour" type="button" role="radio" aria-checked="false">11:00</button>
+              <button class="hour" type="button" role="radio" aria-checked="false">12:00</button>
+              <button class="hour" type="button" role="radio" aria-checked="false">13:00</button>
+              <button class="hour" type="button" role="radio" aria-checked="false">14:00</button>
+              <button class="hour" type="button" role="radio" aria-checked="false">15:00</button>
+              <button class="hour" type="button" role="radio" aria-checked="false">16:00</button>
+              <button class="hour" type="button" role="radio" aria-checked="false">17:00</button>
+              <button class="hour" type="button" role="radio" aria-checked="false">18:00</button>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="counter reveal">
+          <p class="counter__label">En taquilla</p>
+          <ul class="counter__list">
+            <li class="item">
+              <!-- Foto: Frames For Your Heart en Unsplash — unsplash.com/photos/MRelY0fcy6Y -->
+              <img class="item__thumb" src="assets/taq-carrito-520.jpg" alt="" width="520" height="520" loading="lazy" decoding="async">
+              <span class="item__name">Carrito de golf</span>
+              <span class="item__price">55€</span>
+            </li>
+            <li class="item">
+              <!-- Foto: sydney Rae en Unsplash — unsplash.com/photos/_-6iQvIunqA -->
+              <img class="item__thumb" src="assets/taq-palos-520.jpg" alt="" width="520" height="520" loading="lazy" decoding="async">
+              <span class="item__name">Alquiler de palos (set completo)</span>
+              <span class="item__price">70€</span>
+            </li>
+            <li class="item">
+              <!-- Foto: Robert Ruggiero en Unsplash — unsplash.com/photos/MmneOPpwifg -->
+              <img class="item__thumb" src="assets/taq-bolas-520.jpg" alt="" width="520" height="520" loading="lazy" decoding="async">
+              <span class="item__name">Bolas de golf (caja de 12)</span>
+              <span class="item__price">30€</span>
+            </li>
+          </ul>
+          <p class="counter__note">Disponible el mismo día del recorrido, sin reserva previa.</p>
+        </div>
+
+        <form class="request reveal" id="contacto" novalidate>
+          <p class="request__summary" aria-live="polite">
+            <span class="request__label">Tu solicitud</span>
+            <span class="request__value">
+              <span data-summary="course">Recorrido Norte</span>
+              <span class="request__sep" aria-hidden="true">·</span>
+              <span data-summary="day">—</span>
+              <span class="request__sep" aria-hidden="true">·</span>
+              <span data-summary="hour">Sin hora</span>
+            </span>
+          </p>
+
+          <div class="request__fields">
+            <p class="field-input">
+              <label for="nombre">Nombre</label>
+              <input id="nombre" name="nombre" type="text" autocomplete="name" required>
+            </p>
+            <p class="field-input">
+              <label for="email">Email</label>
+              <input id="email" name="email" type="email" autocomplete="email" required>
+            </p>
+            <p class="field-input">
+              <label for="telefono">Teléfono</label>
+              <input id="telefono" name="telefono" type="tel" autocomplete="tel">
+            </p>
+            <p class="field-input field-input--wide">
+              <label for="mensaje">Mensaje <span class="field-input__hint">(opcional)</span></label>
+              <textarea id="mensaje" name="mensaje" rows="2" placeholder="Preferencia de horario alternativo, número de jugadores…"></textarea>
+            </p>
+          </div>
+
+          <div class="request__foot">
+            <button class="cta cta--ink" type="submit">
+              <span class="cta__label">Confirmar solicitud</span>
+              <span class="cta__arrow" aria-hidden="true"></span>
+            </button>
+            <p class="request__done" role="status" hidden>Solicitud enviada. Le escribiremos para confirmar la salida.</p>
+          </div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <div class="foot__inner">
+      <p class="foot__name">Auremont Golf Club</p>
+
+      <div class="foot__brand">
+        <address class="foot__contact">
+          <a href="tel:+34900000000">+34 900 00 00 00</a>
+          <a href="mailto:info@auremontgolfclub.com">info@auremontgolfclub.com</a>
+          <span>Camí de la Serra, s/n <span aria-hidden="true">·</span> Girona, España</span>
+        </address>
+      </div>
+
+      <nav class="foot__nav" aria-label="Secciones">
+        <a href="#club">El Club</a>
+        <a href="#instalaciones">Instalaciones</a>
+        <a href="#membresia">Membresía</a>
+        <a href="#reserva">Reserva</a>
+      </nav>
+
+      <div class="foot__social">
+        <a href="#" aria-label="Instagram">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <rect x="4" y="4" width="16" height="16" rx="4.5"/>
+            <circle cx="12" cy="12" r="4"/>
+            <circle class="dot" cx="16.9" cy="7.1" r="0.9"/>
+          </svg>
+        </a>
+        <a href="#" aria-label="Facebook">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M15 4.8h-2.1A2.9 2.9 0 0 0 10 7.7V19.2"/>
+            <path d="M7.6 11.3h5.6"/>
+          </svg>
+        </a>
+      </div>
+
+      <div class="foot__legal">
+        <nav class="foot__legal-links" aria-label="Legal">
+          <a href="#">Aviso legal</a>
+          <a href="#">Política de privacidad</a>
+          <a href="#">Política de cookies</a>
+          <a href="#">Términos y condiciones</a>
+        </nav>
+        <p class="foot__copy">© 2026 Auremont Golf Club. Todos los derechos reservados.</p>
+      </div>
+    </div>
+  </footer>
+
+  <div class="menu" id="menu" aria-hidden="true">
+    <div class="menu__top">
+      <button class="nav__link menu__close" type="button">Cerrar</button>
+    </div>
+    <ul class="menu__list">
+      <li><a href="#club">El Club</a></li>
+      <li><a href="#instalaciones">Instalaciones</a></li>
+      <li><a href="#membresia">Membresía</a></li>
+      <li><a href="#reserva">Reservar</a></li>
+    </ul>
+    <p class="menu__foot">Auremont Golf Club — Desde 1927</p>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
