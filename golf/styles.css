@@ -1015,7 +1015,8 @@ button { font: inherit; color: inherit; background: none; border: 0; padding: 0;
 .cta--ink:hover,
 .cta--ink:focus-visible { border-bottom-color: var(--ink); }
 
-.request__done {
+.request__done,
+.request__error {
   margin: 0;
   font-family: var(--sans);
   font-size: var(--fs-micro);
@@ -1023,6 +1024,14 @@ button { font: inherit; color: inherit; background: none; border: 0; padding: 0;
   letter-spacing: var(--track-wide);
   text-transform: uppercase;
   color: var(--olive);
+}
+
+/* El error se distingue por tono, dentro de la paleta: el marrón de acento */
+.request__error {
+  max-width: 44rem;
+  letter-spacing: 0.12em;
+  line-height: 1.7;
+  color: var(--bark);
 }
 
 @media (min-width: 768px) and (max-width: 1099px) {

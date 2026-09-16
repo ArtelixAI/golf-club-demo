@@ -42,6 +42,11 @@
 })();
 
 // Reserva: recorrido, día y franja horaria
+// OJO: todo lo que está en este archivo es público. Cualquiera que abra las
+// herramientas del navegador ve la URL y la clave del webhook.
+const WEBHOOK_URL = 'https://artelix.app.n8n.cloud/webhook/febae651-3647-478c-b248-b6d5d9d6a490';
+const WEBHOOK_KEY = 'Sansa28';
+
 (() => {
   const section = document.getElementById('reserva');
   if (!section) return;
@@ -62,13 +67,17 @@
   const MESES = ['enero', 'febrero', 'marzo', 'abril', 'mayo', 'junio',
                  'julio', 'agosto', 'septiembre', 'octubre', 'noviembre', 'diciembre'];
 
-  // Los próximos siete días a partir de hoy
+  const pad = (n) => String(n).padStart(2, '0');
+
+  // Los próximos catorce días a partir de hoy
   const hoy = new Date();
   days.forEach((el) => {
     const fecha = new Date(hoy);
     fecha.setDate(hoy.getDate() + Number(el.dataset.offset));
     el.textContent = `${DIAS[fecha.getDay()]} ${fecha.getDate()}`;
     el.dataset.label = `${fecha.getDate()} de ${MESES[fecha.getMonth()]}`;
+    // AAAA-MM-DD en hora local: toISOString() usa UTC y puede restar un día
+    el.dataset.date = `${fecha.getFullYear()}-${pad(fecha.getMonth() + 1)}-${pad(fecha.getDate())}`;
   });
 
   const pick = (list, el, write) => {
@@ -119,14 +128,70 @@
 
   out.day.textContent = days[0].dataset.label;   // hoy viene seleccionado
 
-  // Envío: sin backend, solo confirmación visible en la propia página
+  // Envío al webhook de n8n: la confirmación solo aparece si llega de verdad
   const form = section.querySelector('.request');
   const done = section.querySelector('.request__done');
-  form.addEventListener('submit', (e) => {
+  const error = section.querySelector('.request__error');
+  const submit = form.querySelector('.cta');
+  const submitLabel = submit.querySelector('.cta__label');
+
+  const showError = (text) => {
+    error.textContent = text;
+    error.hidden = false;
+  };
+
+  form.addEventListener('submit', async (e) => {
     e.preventDefault();
+    done.hidden = true;
+    error.hidden = true;
+
     if (!form.reportValidity()) return;
-    done.hidden = false;
-    form.querySelector('.cta').disabled = true;
+
+    const day = days.find((d) => d.getAttribute('aria-checked') === 'true');
+    const hour = hours.find((h) => h.getAttribute('aria-checked') === 'true');
+    if (!hour) {
+      showError('Seleccione una franja horaria para continuar.');
+      return;
+    }
+
+    const payload = {
+      name: form.nombre.value.trim(),
+      email: form.email.value.trim(),
+      phone: form.telefono.value.trim(),
+      date: day.dataset.date,
+      time: hour.textContent.trim(),
+      message: form.mensaje.value.trim(),
+    };
+
+    submit.disabled = true;
+    submitLabel.textContent = 'Enviando…';
+
+    // Si el servidor no responde en 15 s, se da por fallido
+    const controller = new AbortController();
+    const timeout = setTimeout(() => controller.abort(), 15000);
+
+    try {
+      const res = await fetch(WEBHOOK_URL, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'x-api-key': WEBHOOK_KEY,
+        },
+        body: JSON.stringify(payload),
+        signal: controller.signal,
+      });
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+
+      done.hidden = false;
+      submitLabel.textContent = 'Solicitud enviada';
+    } catch (err) {
+      console.error('Envío de la solicitud fallido:', err);
+      showError('No hemos podido enviar la solicitud. Inténtelo de nuevo en unos minutos o escríbanos a info@auremontgolfclub.com.');
+      submit.disabled = false;
+      submitLabel.textContent = 'Confirmar solicitud';
+    } finally {
+      clearTimeout(timeout);
+    }
   });
 })();
 
