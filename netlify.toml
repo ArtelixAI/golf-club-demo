@@ -1,0 +1,4 @@
+# Configuración de Netlify versionada en el repo (tiene prioridad sobre la interfaz).
+# La web está en la raíz del repositorio.
+[build]
+  publish = "."
